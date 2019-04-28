@@ -1,0 +1,10 @@
+@import '../styles.scss';
+
+.footer{
+    height: 50px;
+    background-color:$blue;
+    @include font($montRegular,normal,14px,$white);
+    text-align: center;
+    padding-top: 17px;
+
+}

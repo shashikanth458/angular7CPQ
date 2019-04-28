@@ -1,0 +1,76 @@
+<article class="content listContainer">
+    <section class="listContainer-bannerSection">
+        <ul class="listContainer-bannerSection-nav">
+            <li class="text-uppercase listContainer-bannerSection-nav-app-name">
+              Excavators<b>inc</b>
+              </li>
+              <li class="listContainer-bannerSection-nav-label">
+                  Equipment
+              </li>
+              <li class="listContainer-bannerSection-nav-label">
+                  Finance
+                </li>
+                <li class="listContainer-bannerSection-nav-label">
+                  Parts services
+                </li>
+                <li class="listContainer-bannerSection-nav-search">
+                    <span></span>
+                    <input type="text" class="" placeholder="search">
+                </li>
+          </ul>
+      </section>
+      <div class="listContainer-processDetails row w-75 m-auto">
+      <div class="listContainer-processDetails-profile col-md-5">
+                  <img class="listContainer-processDetails-profile-img"  src='/assets/images/profile-large.png'/>
+                  <p class="listContainer-processDetails-profile-name">
+                      Athur Curry
+                      <span class="edit float-right"></span>
+                    </p>
+                    <p class="listContainer-processDetails-profile-memStatus">
+                        Elite Member
+                      </p>
+                      <p class="listContainer-processDetails-profile-company">
+                          DHLF Housing &amp; Constructions
+                        </p>
+                        <p class="listContainer-processDetails-profile-updaeInfo">
+                            Contact information updated
+                          </p>
+              </div>
+              <div class="listContainer-processDetails-process col-md-5">
+                  <div class="listContainer-processDetails-process-progress">
+                    </div>
+                    <p class="listContainer-processDetails-process-name">
+                        Progress Tracker
+                      <span class="help float-right"></span>
+                      </p>
+                      <p class="listContainer-processDetails-process-requested">
+                          5 quotes Requested
+                        </p>
+                        <p class="listContainer-processDetails-process-reqState">
+                            <span class="listContainer-processDetails-process-reqState-pending">1 Pending</span>
+                            <span class="listContainer-processDetails-process-reqState-accepted">2 Accepted</span>
+                            <span class="listContainer-processDetails-process-reqState-placed">3 Placed</span>
+                          </p>
+                </div>
+              </div>
+
+              <div class="listContainer-quoteOrderList w-75 m-auto">
+                  <ul class="listContainer-quoteOrderList-nav">
+                      <li [ngClass]="{active:isOrder}" (click)="isOrder=true">
+                          your quotes
+                        </li>
+                        <li [ngClass]="{active:!isOrder}" (click)="isOrder=false">
+                            your orders
+                          </li>
+                    </ul>
+                    <div *ngIf="isOrder">
+                        <app-quote-info></app-quote-info>
+                        <app-quote-info></app-quote-info>
+                        <app-quote-info></app-quote-info>
+                      </div>
+                      <div *ngIf="!isOrder">
+                        <app-ordeer-info></app-ordeer-info>
+                          
+                        </div>
+                </div>
+  </article>

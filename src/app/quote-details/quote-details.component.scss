@@ -1,0 +1,184 @@
+@import '../../styles.scss';
+
+.quoteDetailsContainer{
+    
+    &-bannerSection{
+        height: 230px;
+        background-image: url('/assets/images/banner-strip.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+        &-nav{
+            padding: 37px 80px;
+            li{
+                display: inline-block;
+            }
+            &-app-name{
+                @include font($robotCondBold,bold,20px,$white);
+                margin-right: 40px;
+                b{
+                    color:$red;
+                }
+              } 
+              &-label{
+                @include font($montRegular,normal,14px,$white);
+                margin-right: 40px;
+              } 
+
+              &-search{
+                float: right;
+                input{
+                  @extend .default-input;
+                  width: 120px;
+                  height: 40px;
+                  background: inherit;
+                  border:1px solid $grey6;
+                  border-radius: 22px;
+                  padding:0 22px;
+                  margin-top: -5px;
+                  @include font($montRegular,normal,14px,$white);
+                  &::placeholder{
+                       @include font($montRegular,normal,14px,$white);
+                  }
+                  
+                }
+                span{
+                    float: right;
+                    width: 38px;
+                    height: 38px;
+                    margin:-5px 0 0 28px;
+                    background-image: url('/assets/images/profile.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+  
+                }
+            } 
+        }   
+       
+    }
+    &-quote{
+        position: relative;
+        transform: translate(0,-50%);
+    }
+    &-details{
+        position: relative;
+        padding-bottom: 40px;
+        top: -110px;
+        border-radius: 4px;
+        box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        &-name{
+            @include font($montRegular,600,20px,$blue1);
+            padding: 40px 0 20px 30px;
+            input{
+                @extend .default-input;
+                @include font($montSemiBold,normal,12px,$blue1);
+                margin-right: 15px;
+                border-bottom:1px solid $grey1;
+                &::placeholder{
+                     @include font($montRegular,normal,14px,$grey1);
+                }
+            }
+        }
+
+        &-header{
+            border-top: 1px solid $grey5;
+            border-bottom: 1px solid $grey5;
+            padding: 12px 30px 12px;
+            @include font($montRegular,600,14px,$grey1);
+        }
+        &-content{
+            &:nth-child(2n){
+                background-color:$grey12;
+            }
+            padding: 16px 30px 16px;
+            @include font($montMedium,500,14px,$grey1);
+            &.subContent{
+            @include font($montRegular,normal,14px,$grey1);
+            & div:first-child{
+                padding-left: 20px;
+            }
+                
+            }
+        }
+        &-parts{
+            padding: 15px 30px;
+            border-top: 1px solid $grey5;
+            @include font($montSemiBold,600,14px,$grey4);
+        }
+        &-termsConditions{
+            padding: 14px 0 0 30px;
+            @include font($montRegular,normal,12px,$blue1);
+            border-top: 1px solid $grey5;
+            b{
+              @include font($montSemiBold,normal,12px,$blue1);
+                
+            }
+            label{
+                width: 466px;
+                line-height: 20px;
+            }
+            [type~='checkbox']{
+                display: none;
+                &~.check-inactive{
+                    display: inline-block;
+                    
+                }
+                &~.check-active{
+                    display: none;
+                }
+                &:checked{
+                    &~.check-inactive{
+                        display: none;
+                    }
+                    &~.check-active{
+                        display: inline-block;
+                    }
+                }
+            }
+            .check-active{
+                position: relative;
+                top: -10px;
+                margin: 10px;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-image: url('/assets/images/checkbox-checked.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+        
+            }
+            .check-inactive{
+                position: relative;
+                top: -10px;
+                display: inline-block;
+                margin: 10px;
+                width: 20px;
+                height: 20px;
+                background-image: url('/assets/images/checkbox-unCheck.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        &-btn{
+            margin-top: 35px;
+            text-align: center;
+            &-reject{
+                @extend .default-input;
+                @include font($montSemiBold,600,14px,$blue1);
+                padding:14px 16px;
+                border-radius: 22px;
+                margin-right: 20px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+                border: solid 1px $blue1;
+            }
+            &-approve{
+                @extend .default-input;
+                @include font($montSemiBold,600,14px,$white);
+                padding:14px 16px;
+                border-radius: 22px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+                background-color:$red;
+            }
+        }
+    }
+}

@@ -1,0 +1,239 @@
+@import '../../styles.scss';
+
+.specContainer{
+    [type~='checkbox']{
+        display: none;
+        &~.check-inactive{
+            display: inline-block;
+            
+        }
+        &~.check-active{
+            display: none;
+        }
+        &:checked{
+            &~.check-inactive{
+                display: none;
+            }
+            &~.check-active{
+                display: inline-block;
+            }
+        }
+    }
+    .beacon{
+        background-image: url('/assets/images/beacon.png');
+        background-repeat: no-repeat;
+        background-size: 55%;
+        background-position: center 28px;
+    }
+    .coupler{
+        background-image: url('/assets/images/coupler.png');
+        background-repeat: no-repeat;
+        background-size: 46%;
+        background-position: center 18px;
+    }
+    .radio{
+        background-image: url('/assets/images/radio.png');
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position: top 45px center;
+    }
+    .buket-600{
+        background-image: url('/assets/images/buket-600.png');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center 20px;
+    }
+    .buket-400{
+        background-image: url('/assets/images/buket-400.png');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center 20px;
+    }
+    .buket-250{
+        background-image: url('/assets/images/buket-250.png');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center 20px;
+    }
+    .canopy{
+        background-image: url('/assets/images/canopy.png');
+        background-repeat: no-repeat;
+        background-size: 46%;
+        background-position: center 22px;
+    }
+    .cabin{
+        background-image: url('/assets/images/cabin.png');
+        background-repeat: no-repeat;
+        background-size: 46%;
+        background-position: center 22px;
+    }
+    .firestone-snow{
+        background-image: url('/assets/images/firestone-snow.png');
+        background-repeat: no-repeat;
+        background-size: 45%;
+        background-position: center 18px;
+    }
+    .firestone-rocky{
+        background-image: url('/assets/images/firestone-rocky.png');
+        background-repeat: no-repeat;
+        background-size: 45%;
+        background-position: center 12px;
+    }
+    .good-year-water{
+        background-image: url('/assets/images/firestone-snow.png');
+        background-repeat: no-repeat;
+        background-size: 45%;
+        background-position: center 18px;
+    }
+    .check-active{
+        margin: 10px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/checkbox-checked.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    .check-inactive{
+        display: inline-block;
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url('/assets/images/checkbox-unCheck.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &-checkContainer{
+        label{
+            vertical-align: middle;
+            @include font($montRegular,normal,12px,$grey8);
+            
+        }
+    }
+    
+    .checkedBorder{
+        border: 1px solid $blue1;
+    }
+    >div{
+        margin: 40px 0 60px 0;
+        text-align: center;
+    }
+    &-spec{
+        display: inline-block;
+        width: 200px;
+        min-height: 200px;
+        margin: 0 30px 30px;
+        &.tyres{
+            background-image: url('/assets/images/tyres.png');
+            background-repeat: no-repeat;
+            background-size: 40%;
+            background-position: center 10px;
+        }
+        &.tracks{
+            background-image: url('/assets/images/tracks.png');
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position: top 40px center;
+        }
+        
+        box-shadow: 2px 4px 16px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid $grey5;
+        border-radius: 4px;
+
+       
+        .radio-inactive{
+            margin: 10px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('/assets/images/radio-in-active.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .radio-active{
+            display: inline-block;
+            margin: 10px;
+            width: 20px;
+            height: 20px;
+            background-image: url('/assets/images/radio-active.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        [name~='specRadio']{
+            display: none;
+        }
+     
+        span{
+            display: block;
+            margin-bottom: 4px;
+        }
+       &-name{
+            margin-top: 125px;
+            @include font($montSemiBold,600,14px,$grey1);
+       }
+       &-price{
+        @include font($montRegular,normal,14px,$grey1);
+           
+       } 
+       &-status{
+        @include font($montRegular,normal,10px,$grey1);
+           
+       }
+    }
+    &-quoteForm{
+        text-align: unset !important ;
+        width: 75%;
+        margin: auto !important;
+        label{
+            display: inline-block;
+            margin: 40px 0 5px;
+            @include font($montRegular,normal,14px,$grey8);
+            
+        }
+        &-input{
+            input{
+                @extend .default-input;
+                border: solid 1px $grey9;
+                padding: 10px 5px;
+                margin: 0 30px 40px 0;
+                @include font($montRegular,normal,14px,$blue1);
+                &::placeholder{
+                        @include font($montRegular,normal,14px,$grey10);
+                    
+                }
+                &:focus{
+                    border-bottom: 1px solid $blue1;
+                }
+            }
+
+        }
+        &-warranty{
+            label{
+            @include font($montRegular,normal,12px,$blue1);
+            margin: 0
+                
+            }
+            margin-bottom: 14px;
+            .check-active,.check-inactive{
+                margin-top: -5px;
+            }
+            
+        }
+        &-conditions{
+            label{
+            @include font($montRegular,normal,12px,$blue1);
+            margin: 0
+            }
+            margin-bottom: 18px;
+            line-height: 22px;
+            b{
+                font-family: $montSemiBold;
+            }
+            .check-active,.check-inactive{
+                margin-top: 2px;
+            }
+        }
+    }
+}

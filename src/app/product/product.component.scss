@@ -1,0 +1,107 @@
+@import '../../styles.scss';
+
+.product{
+    background-color:$white;
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    width: calc(100% - 30px);
+    &-banner{
+        min-height: 150px;
+        background-color:$grey;
+        margin: 0 10px 56px;
+        padding: 20px;
+        &-code{
+            @include font($montSemiBold,600,20px,$black-color1);
+        }
+        &-image{
+            width: 65%;
+            position: relative;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+    &-header-label{
+        display: block;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        @include font($montSemiBold,600,14px,$grey1);
+        
+    }
+    &-content-label{
+        display: block;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        @include font($montRegular,normal,14px,$grey1);
+    }
+    &-input-container{
+        display: inline-block;
+        height:45px;
+        margin:20px 0 40px 30px;
+        border:1px solid $grey2;
+        border-radius:4px;
+        &-input{
+            width: 50px;
+            vertical-align: top;
+            height: 100%;
+            padding-top: 12px;
+            input{
+                 @extend .default-input;
+                 @include font($montRegular,normal,14px,$blue1);
+                 width: 100%;
+                 text-align: center;
+            }
+        }
+        &-increment{
+            display: inline-block;
+            width: 46px;
+            height: 100%;
+            cursor: pointer;
+            border-left:1px solid $grey3;
+            background-image:url('/assets/images/plus.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &-decrement{
+            display: inline-block;
+            width: 46px;
+            height: 100%;
+            cursor: pointer;
+            border-right:1px solid $grey3;
+            background-image:url('/assets/images/minus.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+    }
+    &-btn-container{
+        border-top: 1px solid $grey5;
+        height: 60px;
+        button{
+            @extend .default-input;
+            height: 100%;
+            width: 49%;
+            text-align: left;
+           
+        }
+        &-view{
+           
+            padding-left:30px;
+            position: relative;
+            @include font($montRegular,normal,14px,$blue1);
+            &:after{
+                content:'';
+                position: absolute;
+                height: 30px;
+                right: 0;
+                top: 16px;
+                width: 1px;
+                background: $grey5;
+            }
+        }
+        &-configure{
+            padding-left:34px;
+            @include font($montBold,bold,14px,$blue1);
+        }
+    }
+}

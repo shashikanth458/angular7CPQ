@@ -1,0 +1,39 @@
+<article class="product mb-5">
+  <section class="product-banner">
+      <h5 class="product-banner-code">
+         {{productName}}
+        </h5>
+        <img [src]="image" class="product-banner-image">
+    </section>
+    <span class="product-header-label">
+        Engine Model
+      </span>
+      <span class="product-content-label">
+          Yammer C622
+        </span>
+        <span class="product-header-label">
+          Operating Weight
+          </span>
+          <span class="product-content-label">
+              1270.00kg
+              </span>
+          <div class="product-input-container">
+            <span class="product-input-container-decrement">
+
+            </span>
+            <label class="product-input-container-input">
+                <input type='text' [(ngModel)]="qty">
+              </label>
+            <span class="product-input-container-increment">
+              
+              </span>
+            </div>
+            <div class="product-btn-container">
+              <button class="product-btn-container-view">
+                 View Details
+                </button>
+                <button class="product-btn-container-configure" (click)="navToConfig()">
+                    Configure now
+                   </button>
+              </div>
+  </article>

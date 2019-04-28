@@ -1,0 +1,266 @@
+<article class="specContainer">
+  <div class="" *ngIf="state==1">
+      <label class="specContainer-spec tyres" [ngClass]="{'checkedBorder':radioSelection=='tyres'}">
+          <input type="radio" name="specRadio" class="" [value]="tyres" 
+              [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='tyres'">
+          <span *ngIf="radioSelection!='tyres'" class="radio-inactive float-left"></span>
+          <span *ngIf="radioSelection=='tyres'" class="radio-active float-left"></span>
+          <span class="specContainer-spec-name text-center">
+              Tyres
+            </span>
+            <span class="specContainer-spec-price text-center">
+                $999
+              </span>
+              <span class="specContainer-spec-status text-center">
+                  onwards
+                </span>
+        </label>
+
+        <label class="specContainer-spec tracks" [ngClass]="{'checkedBorder':radioSelection=='tracks'}">
+            <input type="radio" name="specRadio" class="" [value]="tracks" 
+            [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='tracks'">
+            <span *ngIf="radioSelection!='tracks'" class="radio-inactive float-left"></span>
+            <span *ngIf="radioSelection=='tracks'" class="radio-active float-left"></span>
+            <span class="specContainer-spec-name text-center">
+                Tracks
+              </span>
+              <span class="specContainer-spec-price text-center">
+                  $999
+                </span>
+                <span class="specContainer-spec-status text-center">
+                    onwards
+                  </span>
+          </label>
+         
+    </div>
+    <div class="" *ngIf="state==2">
+        <label class="specContainer-spec firestone-snow" [ngClass]="{'checkedBorder':radioSelection=='Firestone'}">
+            <input type="radio" name="specRadio" class="" [value]="Firestone" 
+                [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Firestone'">
+            <span *ngIf="radioSelection!='Firestone'" class="radio-inactive float-left"></span>
+            <span *ngIf="radioSelection=='Firestone'" class="radio-active float-left"></span>
+            <span class="specContainer-spec-name text-center">
+                Firestone - Snow 870
+              </span>
+              <span class="specContainer-spec-price text-center">
+                  $3999.00
+                </span>
+                
+          </label>
+  
+          <label class="specContainer-spec firestone-rocky" [ngClass]="{'checkedBorder':radioSelection=='Good'}">
+              <input type="radio" name="specRadio" class="" [value]="Good" 
+              [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Good'">
+              <span *ngIf="radioSelection!='Good'" class="radio-inactive float-left"></span>
+              <span *ngIf="radioSelection=='Good'" class="radio-active float-left"></span>
+              <span class="specContainer-spec-name text-center">
+                  Good Year - Mud 127
+                </span>
+                <span class="specContainer-spec-price text-center">
+                    $1199.00
+                  </span>
+            </label>
+            <label class="specContainer-spec good-year-water" [ngClass]="{'checkedBorder':radioSelection=='Water'}">
+                <input type="radio" name="specRadio" class="" [value]="Water" 
+                    [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Water'">
+                <span *ngIf="radioSelection!='Water'" class="radio-inactive float-left"></span>
+                <span *ngIf="radioSelection=='Water'" class="radio-active float-left"></span>
+                <span class="specContainer-spec-name text-center">
+                    Good Year - Water X3
+                  </span>
+                  <span class="specContainer-spec-price text-center">
+                      $1299.00
+                    </span>
+              </label>
+            <label class="specContainer-spec tyres" [ngClass]="{'checkedBorder':radioSelection=='Michelin'}">
+                <input type="radio" name="specRadio" class="" [value]="Michelin" 
+                    [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Michelin'">
+                <span *ngIf="radioSelection!='Michelin'" class="radio-inactive float-left"></span>
+                <span *ngIf="radioSelection=='Michelin'" class="radio-active float-left"></span>
+                <span class="specContainer-spec-name text-center">
+                    Michelin Tarmac 89
+                  </span>
+                  <span class="specContainer-spec-price text-center">
+                      $1210.00
+                    </span>
+              </label>
+      
+              <label class="specContainer-spec good-year-water" [ngClass]="{'checkedBorder':radioSelection=='Rocky'}">
+                  <input type="radio" name="specRadio" class="" [value]="Rocky" 
+                  [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Rocky'">
+                  <span *ngIf="radioSelection!='Rocky'" class="radio-inactive float-left"></span>
+                  <span *ngIf="radioSelection=='Rocky'" class="radio-active float-left"></span>
+                  <span class="specContainer-spec-name text-center">
+                      Firestone Rocky 127
+                    </span>
+                    <span class="specContainer-spec-price text-center">
+                        $1599.00
+                      </span>
+                </label>
+                <label class="specContainer-spec tyres" [ngClass]="{'checkedBorder':radioSelection=='Snow'}">
+                    <input type="radio" name="specRadio" class="" [value]="Snow" 
+                        [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Snow'">
+                    <span *ngIf="radioSelection!='Snow'" class="radio-inactive float-left"></span>
+                    <span *ngIf="radioSelection=='Snow'" class="radio-active float-left"></span>
+                    <span class="specContainer-spec-name text-center">
+                        Michelin Snow 89
+                      </span>
+                      <span class="specContainer-spec-price text-center">
+                          $1174.00
+                        </span>
+                  </label>
+           
+      </div>
+
+      <div class="" *ngIf="state==3">
+          <label class="specContainer-spec cabin" [ngClass]="{'checkedBorder':radioSelection=='Cabin'}">
+              <input type="radio" name="specRadio" class="" [value]="Cabin" 
+                  [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Cabin'">
+              <span *ngIf="radioSelection!='Cabin'" class="radio-inactive float-left"></span>
+              <span *ngIf="radioSelection=='Cabin'" class="radio-active float-left"></span>
+              <span class="specContainer-spec-name text-center">
+                  Cabin
+                </span>
+                <span class="specContainer-spec-price text-center">
+                    $4000.00
+                  </span>
+            </label>
+    
+            <label class="specContainer-spec canopy" [ngClass]="{'checkedBorder':radioSelection=='Canopy'}">
+                <input type="radio" name="specRadio" class="" [value]="Canopy" 
+                [(ngModel)]="radioSelection" (change)="radioChange()" (click)="radioSelection='Canopy'">
+                <span *ngIf="radioSelection!='Canopy'" class="radio-inactive float-left"></span>
+                <span *ngIf="radioSelection=='Canopy'" class="radio-active float-left"></span>
+                <span class="specContainer-spec-name text-center">
+                    Canopy
+                  </span>
+                  <span class="specContainer-spec-price text-center">
+                      $999
+                    </span>
+              </label>
+             
+        </div>
+
+        <div class="specContainer-checkContainer" *ngIf="state==4">
+            <label class="specContainer-spec buket-250" [ngClass]="{'checkedBorder':Bucket4==true}">
+                <input type="checkbox" name="Bucket4" class=""  
+                    [(ngModel)]="Bucket4" [value]="true">
+                <span  class="check-inactive float-left"></span>
+                <span  class="check-active float-left"></span>
+                <span class="specContainer-spec-name text-center">
+                    Digging Bucket  
+                  </span>
+                  <span class="specContainer-spec-price text-center">
+                      $1499.00
+                    </span>
+              </label>
+      
+              <label class="specContainer-spec buket-400" [ngClass]="{'checkedBorder':Bucket400==true}">
+                  <input type="checkbox" name="Bucket400" class="" 
+                  [(ngModel)]="Bucket400" [value]="true">
+                  
+                  <span  class="check-inactive float-left"></span>
+                  <span  class="check-active float-left"></span>
+                  <span class="specContainer-spec-name text-center">
+                      Digging Bucket 400 MM
+                    </span>
+                    <span class="specContainer-spec-price text-center">
+                        $1999.00
+                      </span>
+                </label>
+
+                <label class="specContainer-spec buket-600" [ngClass]="{'checkedBorder':cleaning4==true}">
+                    <input type="checkbox" name="cleaning4" class=""
+                   [(ngModel)]="cleaning4" [value]="true">
+                    
+                    <span class="check-inactive float-left"></span>
+                    <span class="check-active float-left"></span>
+                    <span class="specContainer-spec-name text-center">
+                        Ditch Cleaning Bucket 600MM
+                      </span>
+                      <span class="specContainer-spec-price text-center">
+                          $3499.00
+                        </span>
+                  </label>
+               
+          </div>
+          <div class="specContainer-checkContainer" *ngIf="state==5">
+              <label class="specContainer-spec radio" [ngClass]="{'checkedBorder':Bucket4==true}">
+                  <input type="checkbox" name="Bucket4" class=""  
+                      [(ngModel)]="Bucket4" [value]="true">
+                  <span  class="check-inactive float-left"></span>
+                  <span  class="check-active float-left"></span>
+                  <span class="specContainer-spec-name text-center">
+                      Radio 
+                    </span>
+                    <span class="specContainer-spec-price text-center">
+                        $499.00
+                      </span>
+                </label>
+        
+                <label class="specContainer-spec coupler" [ngClass]="{'checkedBorder':coupler==true}">
+                    <input type="checkbox" name="coupler" class="" 
+                    [(ngModel)]="coupler" [value]="true">
+                    
+                    <span  class="check-inactive float-left"></span>
+                    <span  class="check-active float-left"></span>
+                    <span class="specContainer-spec-name text-center">
+                        Coupler
+                      </span>
+                      <span class="specContainer-spec-price text-center">
+                          $999.00
+                        </span>
+                  </label>
+  
+                  <label class="specContainer-spec beacon" [ngClass]="{'checkedBorder':cleaning4==true}">
+                      <input type="checkbox" name="cleaning4" class=""
+                     [(ngModel)]="cleaning4" [value]="true">
+                      
+                      <span class="check-inactive float-left"></span>
+                      <span class="check-active float-left"></span>
+                      <span class="specContainer-spec-name text-center">
+                          Beacon
+                        </span>
+                        <span class="specContainer-spec-price text-center">
+                            $99.00
+                          </span>
+                    </label>
+                 
+            </div>
+            <div class="specContainer-quoteForm" *ngIf="state==6">
+                      <label>
+                          Your Full Name
+                        </label>   
+                        <div class="row specContainer-quoteForm-input">
+                            <input type="text" class="col-md-5" value="Aurthur">
+                            <input type="text" class="col-md-5" placeholder="Your Contact Number">
+                          </div>  
+                          <div class="row specContainer-quoteForm-input">
+                              <input type="text" class="col-md-5" placeholder="Your Company Name">
+                              <input type="text" class="col-md-5" placeholder="Your Company Email">
+                            </div> 
+                            <p class="specContainer-quoteForm-warranty">
+                              <label>  
+                                              <input type="checkbox" name="Warranty" class="" 
+                                [(ngModel)]="Warranty" [value]="true">
+                                
+                                <span  class="check-inactive float-left"></span>
+                                <span  class="check-active float-left"></span>
+                                  Add Extended Warranty &amp; Financing Options.
+                                </label>
+                            </p>
+                            <p class="specContainer-quoteForm-conditions">
+                              <label>
+
+                                  <input type="checkbox" name="Bucket401" class="" 
+                                  [(ngModel)]="Bucket401" [value]="true">
+                                  
+                                  <span  class="check-inactive float-left"></span>
+                                  <span  class="check-active float-left"></span>
+                                I understand the <b>Terms &amp; Conditions </b>as stated by Wayne Industries. 
+                                The quote generated will not be shared or published without consent.
+                                </label>
+                            </p>
+                            
+              </div>
+  </article>

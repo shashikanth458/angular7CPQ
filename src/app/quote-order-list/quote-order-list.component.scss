@@ -1,0 +1,194 @@
+@import '../../styles.scss';
+
+
+.listContainer{
+    .edit{
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url('/assets/images/edit.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    .help{
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url('/assets/images/help.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    &-bannerSection{
+        height: 230px;
+        background-image: url('/assets/images/banner-strip.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+        &-nav{
+            padding: 37px 80px;
+            li{
+                display: inline-block;
+            }
+            &-app-name{
+                @include font($robotCondBold,bold,20px,$white);
+                margin-right: 40px;
+                b{
+                    color:$red;
+                }
+              } 
+              &-label{
+                @include font($montRegular,normal,14px,$white);
+                margin-right: 40px;
+              } 
+
+              &-search{
+                float: right;
+                input{
+                  @extend .default-input;
+                  width: 120px;
+                  height: 40px;
+                  background: inherit;
+                  border:1px solid $grey6;
+                  border-radius: 22px;
+                  padding:0 22px;
+                  margin-top: -5px;
+                  @include font($montRegular,normal,14px,$white);
+                  &::placeholder{
+                       @include font($montRegular,normal,14px,$white);
+                  }
+                  
+                }
+                span{
+                    float: right;
+                    width: 38px;
+                    height: 38px;
+                    margin:-5px 0 0 28px;
+                    background-image: url('/assets/images/profile.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+  
+                }
+            } 
+        }   
+       
+    }
+    &-processDetails{
+        border-radius: 4px;
+        box-shadow: 0 4px 30px 10px rgba(0, 0, 0, 0.05);
+        background-color: $white;
+        transform: translate(0,-50%);
+        &-profile{
+            
+            margin: 30px;
+
+            border-right: 1px solid $grey5;
+            &-img{
+                width: 110px;
+                float: left;
+                margin-right: 24px;
+            }
+            &-name{
+                @include font($montSemiBold,600,20px,$grey1);
+                margin-bottom: 10px;
+                .edit{
+                    margin-right: 30px;
+                }
+                
+            }
+            &-memStatus{
+                @include font($montRegular,normal,14px,$blue1);
+                margin-bottom: 24px;
+                background-image: url('/assets/images/member-status.png');
+                background-repeat: no-repeat;
+                background-size:12px;
+                background-position-x: 130px;
+                padding-left: 150px;
+                
+            }
+            &-company{
+                @include font($montSemiBold,600,14px,$grey1);
+                margin-bottom: 6px;
+                
+            }
+            &-updaeInfo{
+                @include font($montRegular,normal,14px,$grey10);
+                
+            }
+        }
+        &-process{
+            margin: 30px;
+            &-name{
+                @include font($montSemiBold,600,20px,$grey1);
+                margin-bottom: 10px;
+            }
+            &-requested{
+                @include font($montRegular,normal,14px,$grey10);
+                margin-bottom: 22px;
+            }
+            &-reqState{
+                @include font($montRegular,normal,14px,$grey1);
+                 
+                &-pending{
+                    display: inline-block;
+                    margin-right: 50px;
+                    &::before{
+                        content:'';
+                        border-radius: 150px;
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 10px;
+                        background-image: linear-gradient(216deg, #cbcbcb, #e6e6e6);
+                    }
+                }
+                &-accepted{
+                    display: inline-block;
+                    &::before{
+                        content:'';
+                        border-radius: 150px;
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 10px;
+                        background-image: linear-gradient(305deg, #6c71b6, #a2a6db);
+                    }
+                }
+                &-placed{
+                    display: block;
+                    margin-top: 10px;
+                    &::before{
+                        content:'';
+                        border-radius: 150px;
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 10px;
+                        background-image: linear-gradient(223deg, #ed5e0a, #fd9853);
+                    }
+                }
+            }
+        }
+    }
+    &-quoteOrderList{
+        
+       
+        &-nav{
+            border-bottom:1px solid $grey5;
+            margin-bottom: 40px;
+            
+            li{
+                display: inline-block;
+                cursor: pointer;
+                padding-bottom:8px;
+                margin-right:40px;
+                text-transform: capitalize;
+                @include font($montRegular,normal,20px,$grey1);
+                &.active{
+                    @include font($montSemiBold,600,20px,$blue1);
+                     border-bottom:2px solid $blue1;
+                    
+                }
+            }
+        }
+       
+    }
+}

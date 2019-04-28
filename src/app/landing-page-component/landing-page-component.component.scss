@@ -1,0 +1,87 @@
+@import '../../styles.scss';
+
+.land-container{
+    &-banner-section{
+        height:65%;
+        &-header{
+            margin: 50px 0 20px 80px;
+            @include font($montSemiBold,600,40px,$white);
+            
+        }
+        &-header-2{
+            margin: 0 0 46px 80px;
+            @include font($montRegular,normal,16px,$white);
+            b{
+            @include font($montSemiBold,normal,16px,$white);
+            }
+            
+        }
+        &-learn-more-btn{
+            @extend .default-input;
+            width: 145px;
+            height: 45px;
+            @include font($montSemiBold,600,14px,$white);
+            margin-left: 80px;
+            background-color: $red;
+            border-radius: 22px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+        &-nav{
+            padding: 37px 80px;
+            
+            li{
+                display: inline-block;
+            }
+          &-app-name{
+            @include font($robotCondBold,bold,20px,$white);
+            margin-right: 40px;
+            b{
+                color:$red;
+            }
+          } 
+          &-label{
+            @include font($montRegular,normal,14px,$white);
+            margin-right: 40px;
+          }
+          &-search{
+              float: right;
+              input{
+                @extend .default-input;
+                width: 120px;
+                height: 40px;
+                background: inherit;
+                border:1px solid $grey6;
+                border-radius: 22px;
+                padding:0 22px;
+                margin-top: -5px;
+                @include font($montRegular,normal,14px,$white);
+                &::placeholder{
+                     @include font($montRegular,normal,14px,$white);
+                }
+                
+              }
+              span{
+                  float: right;
+                  width: 38px;
+                  height: 38px;
+                  margin:-5px 0 0 28px;
+                  background-image: url('/assets/images/profile.png');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+
+              }
+          } 
+        }
+        background-image: url('/assets/images/banner-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+}
+    &-content{
+        margin: 70px 80px 60px;
+        &-header{
+            @include font($montSemiBold,600,30px,$blue);
+            margin-bottom:40px;
+        }
+    }
+}

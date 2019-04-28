@@ -1,0 +1,115 @@
+@import '../../styles.scss';
+
+.orderInfoContainer{
+    padding: 10px 10px 40px 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: $white;
+    .orderReceived{
+        background-image: url('/assets/images/order-recieved.png');
+        background-repeat: no-repeat;
+        background-size: 16px;
+    }
+    .orderShipped{
+        background-image: url('/assets/images/order-shipped.png');
+        background-repeat: no-repeat;
+        background-size: 16px;
+    }
+    
+    &-image{
+        position: relative;
+        margin-right: 20px;
+        background-color: $grey;
+        height:120px;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 43px;
+            left: 20px;
+            background-image: url(/assets/images/product-1.png);
+            background-repeat: no-repeat;
+            background-size: 125px;
+            height: 125px;
+            width: 125px;
+            display: inline-block;
+        }
+        
+      
+    }
+    &-orderDetails{
+        &-productName{
+            @include font($montSemiBold,600,20px,$blue);
+            margin-bottom:10px;
+           
+        }
+        &-orderStatus{
+            @include font($montSemiBold,600,14px,$red1);
+            margin-bottom: 10px;
+            padding-left: 18px;
+            &.orderShipped{
+                   color: $blue2; 
+            }
+         }
+         &-dateDetails{
+            @include font($montRegular,normal,12px,$grey1);
+            margin-bottom: 5px;
+         }
+    }
+   &-orderProgress{
+        margin-top: 30px;
+        &-progressCircle{
+            position: relative;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            padding-top: 28px;
+            line-height: 22px;
+            text-align: center;
+            &.completed{
+                background-image: url('/assets/images/process-completed.png');
+                background-repeat: no-repeat;
+                background-size: 25px;
+                margin-right: 70px;
+                 @include font($montRegular,normal,14px,$grey1);
+                
+            }
+            &.inComplete{
+                background-image: url('/assets/images/process-incomplete.png');
+                background-repeat: no-repeat;
+                background-size: 25px;
+                margin-right: 70px;
+                @include font($montRegular,normal,14px,$grey11);
+            }
+            &:nth-child(2){
+                top: 21px;
+            }
+            &:not(:last-child){
+                &::after{
+                    position: absolute;
+                    display: inline-block;
+                    content:'';
+                    width: 80px;
+                    height: 1px;
+                    background: $grey5;
+                    top: 12px;
+                    left: 20px;
+
+                }
+                
+            }
+        }
+   }
+   &-detailsBtn{
+       text-align: right;
+       button{
+            @extend .default-input;
+            margin-top: 35px;
+            border-radius: 22px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border: solid 1px $blue1;
+            padding: 15px 20px;
+
+       }
+   }
+}
