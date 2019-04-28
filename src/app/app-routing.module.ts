@@ -4,6 +4,7 @@ import { LandingPageComponentComponent } from 'src/app/landing-page-component/la
 import { ConfigureComponent } from 'src/app/configure/configure.component';
 import { QuoteOrderListComponent } from 'src/app/quote-order-list/quote-order-list.component';
 import { QuoteDetailsComponent } from 'src/app/quote-details/quote-details.component';
+import { OrderDetailsComponent } from 'src/app/order-details/order-details.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path:'list',
     component:QuoteOrderListComponent
+  },
+  {
+    path:'orderDetails',
+    component:OrderDetailsComponent
   }
 ];
 

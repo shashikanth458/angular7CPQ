@@ -14,6 +14,7 @@ import { QuoteOrderListComponent } from './quote-order-list/quote-order-list.com
 import { QuoteInfoComponent } from './quote-info/quote-info.component';
 import { OrdeerInfoComponent } from './ordeer-info/ordeer-info.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
     QuoteOrderListComponent,
     QuoteInfoComponent,
     OrdeerInfoComponent,
-    QuoteDetailsComponent
+    QuoteDetailsComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
