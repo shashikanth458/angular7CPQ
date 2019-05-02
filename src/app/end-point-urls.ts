@@ -1,4 +1,4 @@
-const prefix='http://192.168.0.25:8080',endPointUrl=()=>(
+const prefix='',endPointUrl=()=>(
     {
         'requestQuote':prefix+'/quotes/createQuote',
         'quoteList':prefix+'/quotes/quoteList',
