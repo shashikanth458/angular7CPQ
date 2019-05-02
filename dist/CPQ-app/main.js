@@ -490,7 +490,7 @@ var ConfigureComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var prefix = 'http://192.168.0.25:8080', endPointUrl = function () { return ({
+var prefix = '', endPointUrl = function () { return ({
     'requestQuote': prefix + '/quotes/createQuote',
     'quoteList': prefix + '/quotes/quoteList',
     'orderList': prefix + '/quotes/orderList',
