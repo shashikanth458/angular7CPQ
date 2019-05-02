@@ -1,9 +1,13 @@
-import { Component, OnInit,  ViewChild } from '@angular/core';
+import { Component, OnInit,  ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {HttpService} from '../http.service';
+
 import {SpecComponent} from '../spec/spec.component';
 import {CircleProgressComponent} from 'ng-circle-progress';
+import {HttpService} from '../http.service';
+import endPoint from '../end-point-urls';
+
+
 @Component({
   selector: 'app-configure',
   templateUrl: './configure.component.html',
@@ -17,6 +21,16 @@ export class ConfigureComponent implements OnInit {
   circlePercent=(1/6)*100;
   imageUrl='';
   ngOnInit() {
+  }
+
+  navPage(payload){
+    return  new Promise<any>((resolve,reject)=>{
+      this.http.postRequest(endPoint['requestQuote'],payload)
+      .subscribe((data)=>{
+          console.log('Created quotee=-->',data);
+          resolve(data);
+      })
+    })
   }
   getTitle(){
   
@@ -38,11 +52,131 @@ export class ConfigureComponent implements OnInit {
       this.imageUrl='/assets/images/parts-completed.png';
     }
     if(this.state>6){
+      let payload={"Cart": {
+        "MarketCode": "USD",
+        "PricebookCode": "test_USD_L1",
+        "CartComment": "Quote create through API",
+        "PromoCode": "",
+        "Crm": {
+          "OpportunityId": "1234567",
+          "OpportunityName": "Test opportunity 1"
+        },
+        "Items": {
+          "Item": {
+            "Quantity": "1",
+            "ProductName": "Excavator",
+            "CatalogueCode": "",
+            "ItemPrice": "",
+            "Attributes": {
+              "Attribute": [
+                {
+                  "Name": "Tires",
+                  "Value": "Firestone"
+                },
+                {
+                  "Name": "Bucket",
+                  "Value": "400MM"
+                },
+                {
+                  "Name": "Cabin_Type",
+                  "Value": "Canopy"
+                },
+                {
+                  "Name": "Accessories",
+                  "Value": "Radio"
+                },
+                {
+                  "Name": "Accessories",
+                  "Value": "Coupler"
+                },
+                {
+                  "Name": "Tires_Tracks",
+                  "Value": "Tire"
+                }
+              ]
+            }
+          }
+        },
+        "Properties": "",
+        "Customers": {
+          "Customer": [
+            {
+               "$attributes": {
+                "CustomerRoleType": "1"
+              },
+              "Id": "",
+              "ExternalId": "",
+              "FirstName": "North Corporation INXX",
+              "LastName": "INXX",
+              "Company": "North Corporation INXX",
+              "Address1": "8000 River Road Hyb",
+              "Address2": "",
+              "City": "New Milford",
+              "StateAbbrev": "NJ",
+              "ZipCode": "07646",
+              "CountryAbbrev": "US",
+              "TerritoryName": "",
+              "BusinessPhone": "(996) 700-0170",
+              "BusinessFax": "",
+              "EMail": "sanpatro@deloitte.com",
+              "CRMAccountId": "1002471",
+              "CRMContactId": "1002472"
+            },
+            {
+              "$attributes": {
+                "CustomerRoleType": "2"
+              },
+              "Id": "",
+              "ExternalId": "",
+              "FirstName": "North Corporation INXX",
+              "LastName": "INXX",
+              "Company": "North Corporation INXX",
+              "Address1": "8000 River Road Hyb",
+              "Address2": "",
+              "City": "New Milford",
+              "StateAbbrev": "NJ",
+              "ZipCode": "07646",
+              "CountryAbbrev": "US",
+              "TerritoryName": "",
+              "BusinessPhone": "(996) 700-0170",
+              "BusinessFax": "",
+              "EMail": "sanpatro@deloitte.com",
+              "CRMAccountId": "1002471",
+              "CRMContactId": "1002472"
+            },
+            {
+              "$attributes": {
+                "CustomerRoleType": "3"
+              },
+              "Id": "",
+              "ExternalId": "",
+              "FirstName": "North Corporation INXX",
+              "LastName": "INXX",
+              "Company": "North Corporation INXX",
+              "Address1": "8000 River Road Hyb",
+              "Address2": "",
+              "City": "New Milford",
+              "StateAbbrev": "NJ",
+              "ZipCode": "07646",
+              "CountryAbbrev": "US",
+              "TerritoryName": "",
+              "BusinessPhone": "(996) 700-0170",
+              "BusinessFax": "",
+              "EMail": "sanpatro@deloitte.com",
+              "CRMAccountId": "1002471",
+              "CRMContactId": "1002472"
+            }
+          ]
+        },
+        "_PREVENT_EMPTY_QUOTE": "1"
+      }
+};
+
+    this.navPage(payload).then((data)=>{
+      console.log('Im resolved');
       this.router.navigate(['list']);
-      // this.httpService.getRequest(endpoint['getUser']['replace']('$userId','1'))
-      // .subscribe((data)=>{
-      //     console.log(data);
-      // })
+    });
+     
       return;
     }
     this.getTitle();

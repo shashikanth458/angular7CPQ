@@ -5,35 +5,42 @@
             <h5 class="orderInfoContainer-orderDetails-productName">
                 E140
               </h5>
-              <p class="orderInfoContainer-orderDetails-orderStatus orderShipped">
-                  Order Shipped
+              <p class="orderInfoContainer-orderDetails-dateDetails">
+                    Quote #: {{oProduct?._id}}
+                </p>
+              <p class="orderInfoContainer-orderDetails-orderStatus orderReceived">
+                  Order {{status}}
                 </p>
                 <p class="orderInfoContainer-orderDetails-dateDetails">
                         Order placed on
                   </p>
                   <p class="orderInfoContainer-orderDetails-dateDetails">
-                      9th April, 2019
+                      {{createdAt|date}}
                     </p>
           </div>
           <div class="col-md-5 orderInfoContainer-orderProgress">
                  
-                      <span class="orderInfoContainer-orderProgress-progressCircle completed">
-                            Order Received
+                      <span class="orderInfoContainer-orderProgress-progressCircle"
+                      [ngClass]="{completed:getStatus(0),inComplete:!getStatus(0)}">
+                         Order Placed
                         </span>
-                        <span class="orderInfoContainer-orderProgress-progressCircle completed">
-                                Order being Built
+                        <span class="orderInfoContainer-orderProgress-progressCircle"
+                        [ngClass]="{completed:getStatus(1),inComplete:!getStatus(1)}">
+                             Order Confirmed
                           </span>
-                          <span class="orderInfoContainer-orderProgress-progressCircle completed">
+                          <span class="orderInfoContainer-orderProgress-progressCircle"
+                          [ngClass]="{completed:getStatus(2),inComplete:!getStatus(2)}">
                                 Order Shipped
                             </span>
-                            <span class="orderInfoContainer-orderProgress-progressCircle inComplete">
-                                    Order Received
+                            <span class="orderInfoContainer-orderProgress-progressCircle"
+                            [ngClass]="{completed:getStatus(3),inComplete:!getStatus(3)}">
+                              Order Complete
                               </span>
                    
             </div>
             <div class="col-md-2 orderInfoContainer-detailsBtn">
                 <button (click)="navToOrderDetails()">
-                    View Details
+                    {{buttonName||'View Details'}}
                   </button>
               </div>
            

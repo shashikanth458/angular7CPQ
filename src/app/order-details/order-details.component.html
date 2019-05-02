@@ -18,14 +18,14 @@
                     <input type="text" class="" placeholder="search">
                 </li>
           </ul>
+          <a [routerLink]="['/list']" class="quoteDetailsContainer-bannerSection-back">Back</a>
       </section>
       <div class="w-75 m-auto quoteDetailsContainer-quote">
-          <app-ordeer-info></app-ordeer-info>
+          <app-ordeer-info [oProduct]="product" buttonName="Download"></app-ordeer-info>
         </div>
         <div class="quoteDetailsContainer-details w-75 m-auto">
             <h4 class="quoteDetailsContainer-details-name">
                 Order Details
-                <input class="float-right" type="text" name="PO" placeholder="Enter PO">
               </h4>
               <div class="row quoteDetailsContainer-details-header">
                   <div class="col-md-4">
@@ -43,96 +43,42 @@
                 </div>
                 <div class="row quoteDetailsContainer-details-content">
                     <div class="col-md-4">
-                        Mini Excavator (Y-POD 720)
+                            {{productDetails.name}}
                       </div>
                       <div class="col-md-4">
                           Equipment
                         </div>
                         <div class="col-md-2">
-                           1
+                                {{productDetails.qty}}
                           </div>
                           <div class="col-md-2 text-right">
-                              $507.00
+                                ${{productDetails.price}}
                             </div>
                   </div>
-                  <div class="row quoteDetailsContainer-details-content subContent">
+                  <div *ngFor="let p of subItemDetails"
+                        class="row quoteDetailsContainer-details-content subContent">
                       <div class="col-md-4">
-                          Tyre, Firestone Snow 28
+                            {{ p.Name[0]}}
                         </div>
                         <div class="col-md-4">
                             Added Item
                           </div>
                           <div class="col-md-2">
-                             1
+                                {{p.Qty[0]}}
                             </div>
                             <div class="col-md-2 text-right">
-                                $999.00
+                                    {{p.Price[0]}}
                               </div>
                     </div>
-                    <div class="row quoteDetailsContainer-details-content subContent">
-                        <div class="col-md-4">
-                            Tyre, Firestone Snow 28
-                          </div>
-                          <div class="col-md-4">
-                              Added Item
-                            </div>
-                            <div class="col-md-2">
-                               1
-                              </div>
-                              <div class="col-md-2 text-right">
-                                  $999.00
-                                </div>
-                      </div>
-                      <div class="row quoteDetailsContainer-details-content subContent">
-                          <div class="col-md-4">
-                              Tyre, Firestone Snow 28
-                            </div>
-                            <div class="col-md-4">
-                                Added Item
-                              </div>
-                              <div class="col-md-2">
-                                 1
-                                </div>
-                                <div class="col-md-2 text-right">
-                                    $999.00
-                                  </div>
-                        </div>
-                        <div class="row quoteDetailsContainer-details-content">
-                            <div class="col-md-4">
-                                Mini Excavator (Y-POD 720)
-                              </div>
-                              <div class="col-md-4">
-                                  Equipment
-                                </div>
-                                <div class="col-md-2">
-                                   1
-                                  </div>
-                                  <div class="col-md-2 text-right">
-                                      $507.00
-                                    </div>
-                          </div>
-                          <div class="row quoteDetailsContainer-details-content">
-                              <div class="col-md-4">
-                                  Mini Excavator (Y-POD 720)
-                                </div>
-                                <div class="col-md-4">
-                                    Equipment
-                                  </div>
-                                  <div class="col-md-2">
-                                     1
-                                    </div>
-                                    <div class="col-md-2 text-right">
-                                        $507.00
-                                      </div>
-                            </div>
-                            <div class="row quoteDetailsContainer-details-parts row">
+
+                    <div class="row quoteDetailsContainer-details-parts row">
                               <div class="col-md-8">
                                 </div>  
                               <div class="col-md-2">
                                     Number of Parts
                                   </div>
                                   <div class="col-md-2 text-right">
-                                      5 Units
+                                      {{subItemDetailsLength}} Units
                                     </div>
                               </div>
                               <div class="row quoteDetailsContainer-details-parts row">

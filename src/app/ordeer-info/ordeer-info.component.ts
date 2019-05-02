@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {HttpService} from '../http.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +10,32 @@ import { Router } from '@angular/router';
 })
 export class OrdeerInfoComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  @Input() oProduct;
+  @Input() buttonName
+  status;
+  createdAt;
+  constructor(public router:Router,public http:HttpService) { }
 
   ngOnInit() {
+    this.status = this.oProduct.status.slice(0,1)+this.oProduct.status.slice(1,).toLowerCase();;
+    this.createdAt=this.oProduct.created_at;
+  }
+  getStatus(_state){
+    let b:boolean,status=this.status['toLowerCase']();
+      switch(_state){
+        case 0: b=true;break;
+        case 1: b=true;break;
+        //case 1: b=(status==="confirmed")||(status==="shipped")||(status==="complete");break;
+        case 2: (status==="shipped")||(status==="complete");break;
+        case 3: (status==="complete");break;
+        default:'';
+        
+      }
+      return b;
   }
   navToOrderDetails(){
-      this.router.navigate(['orderDetails']);
+    this.http.addKey('prd',this.oProduct);
+    this.router.navigate(['orderDetails'],{queryParams:{quoteId:this.oProduct._id}});
+    this.http.addKey('oStatus',"confirmed");
   }
 }

@@ -1,7 +1,6 @@
 @import '../../styles.scss';
 
 .quoteDetailsContainer{
-    
     &-bannerSection{
         height: 230px;
         background-image: url('/assets/images/banner-strip.png');
@@ -53,7 +52,10 @@
                 }
             } 
         }   
-       
+        &-back{
+            @include font($montRegular,normal,14px,$white);
+            margin: 32px 0 0 80px;
+         }
     }
     &-quote{
         position: relative;

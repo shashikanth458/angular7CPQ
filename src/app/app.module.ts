@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HttpClientModule } from '@angular/common/http';
+import { DoughnutChartComponent} from 'angular-d3-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,7 +28,8 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     QuoteInfoComponent,
     OrdeerInfoComponent,
     QuoteDetailsComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    DoughnutChartComponent
   ],
   imports: [
     BrowserModule,

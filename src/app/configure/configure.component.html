@@ -20,7 +20,7 @@
                               ></circle-progress>
                           </div>
                           <div class="config-container-content-product-info-img-container-parts-progress-parts d-inline-block ml-2">
-                              <b>{{this.state}} out of 6</b> parts added
+                              <b>{{this.state>6?'6':this.state}} out of 6</b> parts added
                             </div>
                       </div>
                 </section>
@@ -64,7 +64,7 @@
             </article>
             <article class="col-md-9 config-container-content-selection-container">
                 <h5>
-                  Create your excavator E 120
+                  Create your excavator E 140
                 </h5>
                 <h6>
                     Request a quote in 3 minutes.
@@ -85,7 +85,7 @@
                           <button 
                             class="config-container-content-selection-container-btn-container-next"
                             (click)="increment()">
-                             {{state==6?'Request Quote':'Next'}}
+                             {{state>=6?'Request Quote':'Next'}}
                             </button>
                       </div>
               </article>

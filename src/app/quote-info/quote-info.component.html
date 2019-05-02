@@ -5,35 +5,44 @@
         <h5 class="quoteInfoContainer-quoteDetails-productName">
             E140
           </h5>
-          <p class="quoteInfoContainer-quoteDetails-quoteStatus quotePending">
-              Quote Pending
+          <p class="quoteInfoContainer-quoteDetails-dateDetails">
+                Quote #: {{product?._id}}
             </p>
+
+          <p class="quoteInfoContainer-quoteDetails-quoteStatus quotePending">
+              Quote {{status}}
+            </p>
+           
             <p class="quoteInfoContainer-quoteDetails-dateDetails">
                 Request sumbitted on
               </p>
               <p class="quoteInfoContainer-quoteDetails-dateDetails">
-                  9th April, 2019
+                  {{createdAt|date}}
                 </p>
       </div>
       <div class="col-md-5 quoteInfoContainer-quoteProgress">
              
-                  <span class="quoteInfoContainer-quoteProgress-progressCircle completed">
+                  <span class="quoteInfoContainer-quoteProgress-progressCircle"
+                        [ngClass]="{completed:getStatus(0),inComplete:!getStatus(0)}">
                       Quote Reqested
                     </span>
-                    <span class="quoteInfoContainer-quoteProgress-progressCircle completed">
+                    <span class="quoteInfoContainer-quoteProgress-progressCircle completed"
+                         [ngClass]="{completed:getStatus(1),inComplete:!getStatus(1)}">
                         Quote Generated
                       </span>
-                      <span class="quoteInfoContainer-quoteProgress-progressCircle completed">
+                      <span class="quoteInfoContainer-quoteProgress-progressCircle completed"
+                            [ngClass]="{completed:getStatus(2),inComplete:!getStatus(2)}">
                           Quote Accepted
                         </span>
-                        <span class="quoteInfoContainer-quoteProgress-progressCircle inComplete">
+                        <span class="quoteInfoContainer-quoteProgress-progressCircle inComplete"
+                                [ngClass]="{completed:getStatus(3),inComplete:!getStatus(3)}">
                             Order Placed
                           </span>
                
         </div>
         <div class="col-md-2 quoteInfoContainer-detailsBtn">
             <button (click)="navToDetails()">
-                View Details
+                {{buttonName||'View Details'}}
               </button>
           </div>
        
