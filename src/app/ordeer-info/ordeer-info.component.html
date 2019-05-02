@@ -3,13 +3,13 @@
           </div>
         <div class="col-md-2 orderInfoContainer-orderDetails">
             <h5 class="orderInfoContainer-orderDetails-productName">
-                E140
+                {{oProduct.productName||E140}}
               </h5>
               <p class="orderInfoContainer-orderDetails-dateDetails">
                     Quote #: {{oProduct?._id}}
                 </p>
-              <p class="orderInfoContainer-orderDetails-orderStatus orderReceived">
-                  Order {{status}}
+              <p class="orderInfoContainer-orderDetails-orderStatus orderReceived text-capitalize">
+                  Order {{pStauts||status}}
                 </p>
                 <p class="orderInfoContainer-orderDetails-dateDetails">
                         Order placed on

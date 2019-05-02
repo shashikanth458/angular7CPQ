@@ -3,14 +3,15 @@
       </div>
     <div class="col-md-2 quoteInfoContainer-quoteDetails">
         <h5 class="quoteInfoContainer-quoteDetails-productName">
-            E140
+        {{product.productName||E140}}
+
           </h5>
           <p class="quoteInfoContainer-quoteDetails-dateDetails">
                 Quote #: {{product?._id}}
             </p>
 
-          <p class="quoteInfoContainer-quoteDetails-quoteStatus quotePending">
-              Quote {{status}}
+          <p class="quoteInfoContainer-quoteDetails-quoteStatus quotePending text-capitalize">
+              Quote {{pStauts||status}}
             </p>
            
             <p class="quoteInfoContainer-quoteDetails-dateDetails">

@@ -21,7 +21,7 @@
           <a [routerLink]="['/list']" class="quoteDetailsContainer-bannerSection-back">Back</a>
       </section>
       <div class="w-75 m-auto quoteDetailsContainer-quote">
-          <app-ordeer-info [oProduct]="product" buttonName="Download"></app-ordeer-info>
+          <app-ordeer-info [oProduct]="product" pStauts="confirmed" buttonName="Download"></app-ordeer-info>
         </div>
         <div class="quoteDetailsContainer-details w-75 m-auto">
             <h4 class="quoteDetailsContainer-details-name">
@@ -91,26 +91,7 @@
                                           $45200.00
                                         </div>
                                   </div>
-                           <div class="quoteDetailsContainer-details-termsConditions">
-                            <label>
-                              <input type="checkbox" name="terms" class="" 
-                              [(ngModel)]="terms" [value]="true">
-                              
-                              <span  class="check-inactive float-left"></span>
-                              <span  class="check-active float-left"></span>
-
-                              I understand the <b> Terms &amp; Conditions </b>as stated by Wayne Industries. 
-                              The quote generated will not be shared or published without consent.
-                            </label>
-                            </div>  
-                            <div class="text-center quoteDetailsContainer-details-btn">
-                                  <button class="quoteDetailsContainer-details-btn-reject">
-                                      Reject Order
-                                  </button>
-                                  <button class="quoteDetailsContainer-details-btn-approve">
-                                      Approve Order
-                                  </button>
-                              </div>     
+                                
             </div>
   </article>
 

@@ -10,14 +10,18 @@ import { Router } from '@angular/router';
 })
 export class QuoteInfoComponent implements OnInit {
 
+  
+
   status:string;
   createdAt;
   constructor(public router:Router, public http:HttpService) { }
   @Input() product
   @Input() buttonName
+  @Input() pStauts
 
   getStatus(_state){
     let b:boolean,status=this.status['toLowerCase']();
+       
       switch(_state){
         case 0: b=true;break;
         case 1: b=(status==="generated")||(status==="accepted")||(status==="orderplaced");break;
@@ -31,7 +35,7 @@ export class QuoteInfoComponent implements OnInit {
   ngOnInit() {
       console.log(this.product);
         this.status = this.product.status.slice(0,1)+this.product.status.slice(1,).toLowerCase();
-       
+        this.status=this.pStauts||this.status;
         this.createdAt= this.product.created_at;
       }
 

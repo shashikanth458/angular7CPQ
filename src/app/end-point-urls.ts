@@ -1,10 +1,11 @@
-const prefix='',endPointUrl=()=>(
+const prefix='/quotes',endPointUrl=()=>(
     {
-        'requestQuote':prefix+'/quotes/createQuote',
-        'quoteList':prefix+'/quotes/quoteList',
-        'orderList':prefix+'/quotes/orderList',
-        'details':prefix+'/quotes/$id',
-        'approveQuote':prefix+'/quotes/$quoteId/placeOrder'
+        'requestQuote':prefix+'/createQuote',
+        'quoteList':prefix+'/quoteList',
+        'orderList':prefix+'/orderList',
+        'details':prefix+'/$id',
+        'approveQuote':prefix+'/$quoteId/placeOrder',
+        'resetData':prefix+'/refreshDBWithStatic'
         
 
     }
