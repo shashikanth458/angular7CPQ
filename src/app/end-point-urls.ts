@@ -1,4 +1,4 @@
-const prefix='/quotes',endPointUrl=()=>(
+const prefix='http://localhost:8080/quotes',endPointUrl=()=>(
     {
         'requestQuote':prefix+'/createQuote',
         'quoteList':prefix+'/quoteList',
