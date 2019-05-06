@@ -52,3 +52,9 @@ $robotCondBold:'robotCondBold', sans-serif;
     outline: none;
     background: transparent;
 }
+a{
+    color:inherit;
+    &:active,&:hover{
+        text-decoration: none;
+    }
+}
